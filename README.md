@@ -22,6 +22,12 @@ A project to play with Cordova, AngularJS UI and Fastlane automation.
 
 #### Android
 
+##### Signing Android App
+
+1. Follow [this](https://developer.android.com/studio/publish/app-signing.html#signing-manually) instructions to know how to generate the **.keystore** to sign your app by CLI;
+2. Edit the Android section in `./build.json` the place your keystore info;
+3. Run `cordova build android --release` and the CLI will be able to generate signed App.
+
 #### iOS
 
 ### Using Fastlane
@@ -30,6 +36,7 @@ A project to play with Cordova, AngularJS UI and Fastlane automation.
 
 1. Install **Homebrew** running `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 2. Install **Fastlane** running `brew cask udpate fastlane`;
-3. Remember to fix the App Id in `./fastlane/Appfile`;
 3. Look into `./fastlane/Fastfile` to know the predefined lanes;
-4. Have fun!
+4. Remember to fix the App Id and Play Store credentials file path in `./fastlane/Appfile`;
+5. Make sure you configured the platform referred in the lane you planning to use;
+6. Have fun!

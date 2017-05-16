@@ -30,6 +30,10 @@ platform :android do
   desc "Deploy a new version to the Google Play"
   lane :deploy do
     sh 'cordova build android --release --device'
+    supply({
+      track:'beta',
+      apk:'platforms/android/build/outputs/apk/android-release.apk'
+    })
   end
 end
 

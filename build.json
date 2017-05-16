@@ -1,0 +1,18 @@
+{
+    "android": {
+        "debug": {
+            "keystore": "../_keys/com.murilobeltrame.cordovaplayground.keystore",
+            "storePassword": "Chave@123",
+            "alias": "debug",
+            "password": "Chave@123",
+            "keystoreType": ""
+        },
+        "release": {
+            "keystore": "../_keys/com.murilobeltrame.cordovaplayground.keystore",
+            "storePassword": "Chave@123",
+            "alias": "release",
+            "password": "Chave@123",
+            "keystoreType": ""
+        }
+    }
+}

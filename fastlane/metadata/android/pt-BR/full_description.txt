@@ -1,0 +1,2 @@
+Esse é um projeto feito para brincar!
+O objetivo é testar ferramentas, técnicas, processos de lançamento e metodologias de desenvolvimento e gestão.
