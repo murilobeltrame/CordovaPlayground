@@ -14,51 +14,34 @@
 fastlane_version "2.22.0"
 
 before_all do
+  sh 'npm i' #Make sure the all missing node packages are installed;
+end
+
+desc "Runs all the tests"
+lane :test do
 end
 
 platform :android do
-  before_all do
-  end
-
-  desc "Runs all the tests"
-  lane :test do
-  end
-
   desc "Submit a new Beta Build to Crashlytics Beta"
   lane :beta do
+    sh 'cordova build android --dev --device'
   end
 
   desc "Deploy a new version to the Google Play"
   lane :deploy do
-  end
-
-  after_all do |lane|
-  end
-
-  error do |lane, exception|
+    sh 'cordova build android --release --device'
   end
 end
 
 platform :ios do
-  before_all do
-  end
-
-  desc "Runs all the tests"
-  lane :test do
-  end
-
   desc "Submit a new Beta Build to Crashlytics Beta"
   lane :beta do
+    sh 'cordova build ios --dev --device'
   end
 
   desc "Deploy a new version to the Play Store"
   lane :deploy do
-  end
-
-  after_all do |lane|
-  end
-
-  error do |lane, exception|
+    sh 'cordova build ios --release --device'
   end
 end
 

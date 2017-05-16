@@ -3,3 +3,5 @@
 /platforms
 /plugins
 /node_modules
+!/fastlane/*
+/fastlane/report.xml
