@@ -1,0 +1,69 @@
+# Customise this file, documentation can be found here:
+# https://github.com/fastlane/fastlane/tree/master/fastlane/docs
+# All available actions: https://docs.fastlane.tools/actions
+# can also be listed using the `fastlane actions` command
+
+# Change the syntax highlighting to Ruby
+# All lines starting with a # are ignored when running `fastlane`
+
+# If you want to automatically update fastlane if a new version is available:
+# update_fastlane
+
+# This is the minimum version number required.
+# Update this, if you use features of a newer version
+fastlane_version "2.22.0"
+
+before_all do
+end
+
+platform :android do
+  before_all do
+  end
+
+  desc "Runs all the tests"
+  lane :test do
+  end
+
+  desc "Submit a new Beta Build to Crashlytics Beta"
+  lane :beta do
+  end
+
+  desc "Deploy a new version to the Google Play"
+  lane :deploy do
+  end
+
+  after_all do |lane|
+  end
+
+  error do |lane, exception|
+  end
+end
+
+platform :ios do
+  before_all do
+  end
+
+  desc "Runs all the tests"
+  lane :test do
+  end
+
+  desc "Submit a new Beta Build to Crashlytics Beta"
+  lane :beta do
+  end
+
+  desc "Deploy a new version to the Play Store"
+  lane :deploy do
+  end
+
+  after_all do |lane|
+  end
+
+  error do |lane, exception|
+  end
+end
+
+after_all do |lane|
+end
+
+error do |lane, exception|
+end
