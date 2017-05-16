@@ -2,7 +2,7 @@
 
 A project to play with Cordova, AngularJS UI and Fastlane automation.
 
-##Install
+## Install
 
 1. Install NodeJS from [here]();
 2. Install Cordova globally using `npm i -g cordova`;
@@ -11,14 +11,14 @@ A project to play with Cordova, AngularJS UI and Fastlane automation.
 5. Run `npm i` to restore all dependency packages;
 6. You`r done!
 
-###Setup Platforms
+### Setup Platforms
 
-####Browser
+#### Browser
 
 1. Navigate to your local copy;
 2. Run `cordova platforms add browser`;
 3. Now you can serve the app with `cordova serve`!
 
-####Android
+#### Android
 
-####iOS
+#### iOS
