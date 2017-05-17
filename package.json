@@ -26,7 +26,6 @@
         ]
     },
     "devDependencies": {
-        "find-in-files": "^0.4.0",
         "glob": "^7.1.1",
         "replace-in-file": "^2.5.0"
     }
