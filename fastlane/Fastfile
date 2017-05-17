@@ -23,8 +23,13 @@ end
 
 platform :android do
   desc "Submit a new Beta Build to Crashlytics Beta"
-  lane :beta do
+  lane :beta do |options|
     sh 'cordova build android --dev --device'
+    crashlytics({
+      apk_path:'platforms/android/build/outputs/apk/android-debug.apk',
+      api_token:options[:api_token],
+      build_secret:options[:build_secret]
+    })
   end
 
   desc "Deploy a new version to the Google Play"
