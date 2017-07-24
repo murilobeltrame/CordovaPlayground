@@ -14,7 +14,6 @@
         var fs = ctx.requireCordovaModule('fs'),
             path = ctx.requireCordovaModule('path'),
             deferral = ctx.requireCordovaModule('q').defer();
-
         var replace = require('replace-in-file'),
             glob = require('glob');
 
@@ -31,7 +30,7 @@
                 from: /<\/application>/g,
                 to: '<meta-data\nandroid:name="io.fabric.ApiKey"\nandroid:value="79444ddc2645f3411376cb50c4062dd2cc2a3721" />\n</application>'
             });
-
+            console.warn('Fabric configuration done in ' + _manifestPath);
         }
         var _hasManifestInternetConfiguration = /android:name=\"android.permission.INTERNET\"/g.test(_manifestContent);
         if (_hasManifestInternetConfiguration) {
@@ -40,10 +39,10 @@
             console.warn('Missing AndroidManifest.xml user permission for Internet access. Configuring...');
             replace.sync({
                 files: _manifestPath,
-                from: /\<\/manifest>/g,
+                from: /<\/manifest>/g,
                 to: '<uses-permission android:name="android.permission.INTERNET" />\n</manifest>'
             });
-            console.warn('Configuration done in ' + _manifestPath);
+            console.warn('Internet configuration done in ' + _manifestPath);
         }
 
         //Localizando o arquivo build.gradle
@@ -66,8 +65,8 @@
                 to: 'import org.apache.cordova.*;\nimport com.crashlytics.android.Crashlytics;\nimport io.fabric.sdk.android.Fabric;'
             });
             replace.sync({
-                files: _mainActivityPath + '/**/MainActivity.java',
-                from: /uper.onCreate\(savedInstanceState\);/g,
+                files: _mainActivityPath,
+                from: /super.onCreate\(savedInstanceState\);/g,
                 to: 'super.onCreate(savedInstanceState);\nFabric.with(this, new Crashlytics());'
             });
             console.warn('Configuration done in ' + _mainActivityPath);
