@@ -16,6 +16,19 @@
             .pipe(gulp.dest('src'));
     });
 
+    gulp.task('bundle:debug', function() {
+
+        var bower_filter = $.filter('*/bower_components/*', { restore: true });
+
+        gulp.src('src/*.html')
+            .pipe($.useref({ noconcat: true }))
+            .pipe(bower_filter)
+            .pipe(gulp.dest('www/scripts'))
+            .pipe(bower_filter.restore)
+            .pipe(gulp.dest('www'));
+
+    });
+
     gulp.task('bundle', function() {
 
         var js_filter = $.filter('**/*.js', { restore: true });
