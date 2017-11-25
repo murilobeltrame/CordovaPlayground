@@ -5,3 +5,7 @@
 /node_modules
 !/fastlane/*
 /fastlane/report.xml
+package-lock.json
+/bower_components
+!www/
+www/*
